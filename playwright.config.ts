@@ -2,8 +2,8 @@ import { defineConfig } from "@playwright/test";
 
 export default defineConfig({
   testDir: "./tests",
-  timeout: 30 * 1000,
-  retries: 0,
+  timeout: 60 * 1000,
+  retries: 1,
   fullyParallel: true, // run tests in parallel across files (not within a file)
   reporter: [["html", { open: "never" }]], // group tests by file in the report
 

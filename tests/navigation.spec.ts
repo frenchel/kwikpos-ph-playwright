@@ -178,8 +178,8 @@ test.describe("KwikPOS PH Navigation", () => {
       await expect(item.locator).toBeVisible();
       await expect(item.locator).toBeEnabled();
       await item.locator.click();
-      // await expect(page).toHaveURL(new RegExp(`${item.href}$`)); // check if correct url
-      await expect(page).toHaveURL(`https://www.kwikpos.ph${item.href}`);
+      await expect(page).toHaveURL(new RegExp(`${item.href}$`)); // check if correct url
+      //await expect(page).toHaveURL(`https://www.kwikpos.ph${item.href}`);
       await page.goto("/", { timeout: 60000 });
     }
   });

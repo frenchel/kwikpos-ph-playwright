@@ -18,27 +18,26 @@ export const validFormData = {
 
 // invalid names
 export const invalidNames = {
-    ...validFormData,
-    fullName: '123!@#?.,',
-    companyName: ',./<>?;'
+  ...validFormData,
+  fullName: "123!@#?.,",
+  companyName: ",./<>?;",
 };
 
 // invalid phone number
 export const invalidPhone = {
-    ...validFormData,
-    phone: '911'
-}
+  ...validFormData,
+  phone: "911",
+};
 
 // invalid email
 export const invalidEmail = {
-    ...validFormData,
-    email: 'no-email-available'
-}
+  ...validFormData,
+  email: "no-email-available",
+};
 
 // missing required fields
 export const missingRequiredFields = {
-    fullName: '',
-    phone: '',
-    email: ''
-}
-
+  fullName: "",
+  phone: "",
+  email: "",
+};

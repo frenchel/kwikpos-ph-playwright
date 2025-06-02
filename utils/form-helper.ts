@@ -2,40 +2,46 @@ import { Page } from "@playwright/test";
 
 export async function fillForm(page: Page, data: any) {
   if (data.fullName !== undefined)
-    await page.fill('input[name="full_name"]', data.fullName);
+    await page.getByRole("textbox", { name: "Full Name*" }).fill(data.fullName);
 
   if (data.companyName !== undefined)
-    await page.fill('input[name="company_name"]', data.companyName);
+    await page
+      .getByRole("textbox", { name: "Company Name" })
+      .fill(data.companyName);
 
   if (data.phone !== undefined)
-    await page.fill('input[name="phone"]', data.phone);
+    await page.getByRole("textbox", { name: "Phone Number*" }).fill(data.phone);
 
   if (data.email !== undefined)
-    await page.fill('input[name="email"]', data.email);
+    await page.getByRole("textbox", { name: "Email*" }).fill(data.email);
 
-  if (data.businessType !== undefined)
-    await page.selectOption('select[name="business_type"]', data.businessType);
+  if (data.businessType !== undefined) {
+    await page.getByRole("textbox", { name: "Type of Business" }).click();
+    await page.getByText("Retail", { exact: true }).click(); // open the dropdown group
+    await page.getByRole("treeitem", { name: data.businessType }).click(); // select actual option
+  }
 
   if (data.numOfStores !== undefined)
-    await page.selectOption(
-      'select[name="number_of_stores"]',
-      data.numOfStores
-    );
+    await page.locator("#branch").selectOption(data.numOfStores);
 
   if (data.location !== undefined)
-    await page.selectOption('select[name="location"]', data.location);
+    await page.locator("#region").selectOption(data.location);
 
   if (data.city !== undefined)
-    await page.selectOption('select[name="city"]', data.city);
+    await page.locator("#city").selectOption(data.city);
 
   if (data.existingPOS !== undefined)
-    await page.check(`input[type="radio"][value="${data.existingPOS}"]`);
+    await page.getByRole("radio", { name: data.existingPOS }).check();
 
   if (data.whenCall !== undefined)
-    await page.fill('input[name="when_call"]', data.whenCall);
+    await page
+      .getByRole("textbox", { name: /When can we call you/i })
+      .fill(data.whenCall);
 
   if (data.message !== undefined)
-    await page.fill('textarea[name="message"]', data.message);
+    await page
+      .getByRole("textbox", { name: /Brief detail of your/i })
+      .fill(data.message);
 
-  await page.click('button[type="submit"]');
+  await page.getByRole("button", { name: "Inquire Now" }).click(); // more robust for multiple pages
 }

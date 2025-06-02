@@ -3,17 +3,17 @@ tomorrow.setDate(tomorrow.getDate() + 1);
 
 // valid input form data
 export const validFormData = {
-  fullName: "Birkin Aspin",
-  companyName: "Pedigree Philippines",
+  fullName: "Kyla Villanueva",
+  companyName: "Facessentials Clinic",
   phone: "09123456789",
-  email: "birkin@gmail.com",
-  businessType: "Cafe/Bakery",
-  numOfStores: "5",
+  email: "kylavillanueva@facessentials.com",
+  businessType: "Pharmacy",
+  numOfStores: "1",
   location: "NCR",
-  city: "Pasig City",
-  existingPOS: "Yes",
+  city: "Caloocan City",
+  existingPOS: "No",
   whenCall: tomorrow.toISOString().split("T")[0], // format: YYYY-MM-DD
-  message: "I am interested in KwikPOS for my small business.",
+  message: "POS device for beauty products",
 };
 
 // invalid names

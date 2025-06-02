@@ -43,5 +43,5 @@ export async function fillForm(page: Page, data: any) {
       .getByRole("textbox", { name: /Brief detail of your/i })
       .fill(data.message);
 
-  await page.getByRole("button", { name: "Inquire Now" }).click(); // more robust for multiple pages
+  //await page.getByRole("button", { name: "Inquire Now" }).click(); // more robust for multiple pages
 }

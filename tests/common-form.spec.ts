@@ -46,16 +46,29 @@ for (const { label, url } of formPages) {
         await fillForm(page, data);
         await page.waitForTimeout(3000);
 
-        const errorInputs = await page.locator(
-          "input.error, .has-error, .field-error"
-        );
         if (shouldPass) {
-          await expect(page.locator("h2.title_kwikpospages")).toBeVisible();
+          // submit the form
+          await page.getByRole("button", { name: "Inquire Now" }).click();
+
+          // thank you page should appear
+          await expect(page.locator("h2.title_kwikpospages")).toHaveText(
+            "Thank You for Contacting Us!"
+          );
         } else {
-          const errorCount = await errorInputs.count();
-          if (errorCount > 0) {
+          // submit the form
+          const [navigation] = await Promise.all([
+            page.waitForNavigation({ timeout: 3000 }).catch(() => null), // if blocked by validation
+            page.getByRole("button", { name: "Inquire Now" }).click(),
+          ]);
+
+          if (navigation) {
+            // form submitted despite invalid fields
             throw new Error(
-              "Test case failed: Missing validation in form fields."
+              "Test case failed: Missing validation on form fields."
+            );
+          } else {
+            console.log(
+              'Test case passed: Validation blocked the form (e.g., "Please fill out this field").'
             );
           }
         }
@@ -63,20 +76,3 @@ for (const { label, url } of formPages) {
     }
   });
 }
-
-// test.describe("Form Validation on Homepage", () => {
-//   for (const { name, data, shouldPass } of formTestCases) {
-//     test(`should ${shouldPass ? "succeed" : "fail"} with ${name}`, async ({
-//       page,
-//     }) => {
-//       await page.goto("https://kwikpos.ph/"); // adjust if needed
-//       await fillForm(page, data);
-
-//       if (shouldPass) {
-//         await expect(page.locator(".form-success")).toBeVisible(); // change selector if needed
-//       } else {
-//         await expect(page.locator(".form-error")).toBeVisible(); // change selector if needed
-//       }
-//     });
-//   }
-// });

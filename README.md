@@ -23,7 +23,7 @@ This project is a web test automation suite for KwikPOS PH (https://www.kwikpos.
 #### UI Navigation Tests
 - Verifies correct routing for: Header links, Navbar dropdowns, Footer links, etc.
 
-### Others
+#### Others
 - Custom playwright.config.ts file for tailored test runs and project structure
 - Tests are organized by feature (navigation, form, chat, etc.)
 - Used tools:  Playwright, TypeScript, Node.js / NPM, VS Code, GitHub

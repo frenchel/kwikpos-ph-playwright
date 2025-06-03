@@ -40,9 +40,13 @@ test("Chat Widget Home", async ({ page }) => {
     .fill("Motunui");
 
   //submit
-  //await chatFrame.getByRole("button", { name: "Submit" }).click();
+  await chatFrame.getByRole("button", { name: "Submit" }).click();
 
-  // Example: Check if a confirmation message appears after filling out
-   //const confirmation = chatFrame.locator("text=Name : Maui Email :");
-   //await expect(confirmation).toBeVisible();
+  // confirmation that the form is sent
+  const chatConfirmation = chatFrame
+    .locator("#tawk-body div")
+    .filter({ hasText: "Maui" }); 
+
+  await expect(chatConfirmation).toContainText("maui@gmail.com");
+  await expect(chatConfirmation).toContainText("Motunui");
 });

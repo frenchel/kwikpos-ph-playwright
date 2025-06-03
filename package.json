@@ -6,7 +6,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "test:chrome": "npx playwright test --config=playwright.config.ts --project=chrome",
     "test:nav": "npx playwright test tests/navigation.spec.ts --project=chrome",
-    "test:common": "npx playwright test tests/common-form.spec.ts --project=chrome --headed"
+    "test:common": "npx playwright test tests/common-form.spec.ts --project=chrome --headed",
+    "test:chat": "npx playwright test tests/chat-widget.spec.ts --project=chrome --headed"
   },
   "author": "Frenchel Karylle B. Laroza",
   "license": "ISC",

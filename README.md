@@ -1,4 +1,4 @@
-![Automation Demo](https://github.com/frenchel/kwikpos-ph-playwright/blob/main/assets/kwikposph-playwright-demo.gif?raw=true)
+![Automation Demo](https://github.com/frenchel/kwikposph-ph-playwright/blob/main/assets/kwikposph-playwright-demo.gif?raw=true)
 
 # KwikPOS PH – Web Test Automation with Playwright
 

@@ -3,8 +3,6 @@ import { test, expect } from "@playwright/test";
 test("Chat Widget Home", async ({ page }) => {
   await page.goto("https://kwikpos.ph/");
 
-  await page.pause();
-
   // chat launcher button
   const widgetFrame = await page
     .frameLocator('iframe[title="chat widget"]')

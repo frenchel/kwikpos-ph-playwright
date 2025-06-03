@@ -18,7 +18,7 @@ This project is a web test automation suite for KwikPOS PH (https://www.kwikpos.
 - Custom terminal reporter logs:
   - Success cases
   - Failures with detailed context (e.g., missing field validation)
-- Located in `reporters/custom-reporter.ts`
+- Located in `reporters/kwikposph-reporter.ts`
 
 #### UI Navigation Tests
 - Verifies correct routing for: Header links, Navbar dropdowns, Footer links, etc.

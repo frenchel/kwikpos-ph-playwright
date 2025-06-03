@@ -4,24 +4,17 @@ This project is a web test automation suite for KwikPOS PH (https://www.kwikpos.
 
 ## Project Features
 
-### Automated Form Validation
-- Validates form fields across pages like:
-  - Homepage
-  - All product pages: KwikPOS Mobile, Tablet, Tablet All-in-One, Single Screen, Dual Screen, Self-Ordering Kiosk
-- Fields tested (positive and negative testing):
-  - Full Name
-  - Email Address
-  - Phone Number
-  - Company Name
-  - Region/City dropdowns
+#### Automated Form Validation
+- Validates form fields across pages like
+- Includes positive and negative testing
 
-### Reusable Test Functions
+#### Reusable Test Functions
 - Modular helpers in `utils/form-helper.ts`:
   - `fillForm()` – simulate valid user input
   - `validateForm()` – simulate validation errors
 - Enables DRY (Don't Repeat Yourself) coding across test cases.
 
-### Chat Widget Automation
+#### Chat Widget Automation
 - Handles **Tawk.to** chat widget within nested iframes.
 - Automates:
   - New conversation trigger
@@ -29,22 +22,15 @@ This project is a web test automation suite for KwikPOS PH (https://www.kwikpos.
   - Submission validation
 - Verifies if field validations trigger on incorrect input.
 
-### 📄 Custom Reporter
+#### Custom Reporter
 - Custom terminal reporter logs:
   - Success cases
   - Failures with detailed context (e.g., missing field validation)
 - Located in `reporters/custom-reporter.ts`.
 
-### 🧭 UI Navigation Tests
-- Verifies correct routing for:
-  - Header links
-  - Navbar dropdowns
-  - Footer links
+#### UI Navigation Tests
+- Verifies correct routing for: Header links, Navbar dropdowns, Footer links, etc
 - Uses consistent `page.locator()` strategies with assertions.
-
-### 🎥 Video Recording (Optional)
-- Playwright supports recording videos of test sessions.
-- Great for demo videos on LinkedIn or presentations.
 
 ## Tools Used
 - Playwright

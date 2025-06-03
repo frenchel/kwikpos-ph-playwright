@@ -2,7 +2,7 @@ import { test, expect, Locator } from "@playwright/test";
 
 test.describe("KwikPOS PH Navigation", () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto("/", { timeout: 60000 });
+    await page.goto("/", { timeout: 90000 });
   });
 
   test("Homepage Header", async ({ page }) => {

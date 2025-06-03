@@ -3,20 +3,74 @@
 This project is a web test automation suite for KwikPOS PH (https://www.kwikpos.ph), built using Playwright.  
 It showcases automated tests for forms, buttons, pricing plans, and site navigation.
 
+## Project Features
+
+### Automated Form Validation
+- Validates form fields across pages like:
+  - Homepage
+  - All product pages: KwikPOS Mobile, Tablet, Tablet All-in-One, Single Screen, Dual Screen, Self-Ordering Kiosk
+- Fields tested (positive and negative testing):
+  - Full Name
+  - Email Address
+  - Phone Number
+  - Company Name
+  - Region/City dropdowns
+
+### Reusable Test Functions
+- Modular helpers in `utils/form-helper.ts`:
+  - `fillForm()` – simulate valid user input
+  - `validateForm()` – simulate validation errors
+- Enables DRY (Don't Repeat Yourself) coding across test cases.
+
+### Chat Widget Automation
+- Handles **Tawk.to** chat widget within nested iframes.
+- Automates:
+  - New conversation trigger
+  - Filling required fields (Name, Email, Phone, Company)
+  - Submission validation
+- Verifies if field validations trigger on incorrect input.
+
+### 📄 Custom Reporter
+- Custom terminal reporter logs:
+  - Success cases
+  - Failures with detailed context (e.g., missing field validation)
+- Located in `reporters/custom-reporter.ts`.
+
+### 🧭 UI Navigation Tests
+- Verifies correct routing for:
+  - Header links
+  - Navbar dropdowns
+  - Footer links
+- Uses consistent `page.locator()` strategies with assertions.
+
+### 🎥 Video Recording (Optional)
+- Playwright supports recording videos of test sessions.
+- Great for demo videos on LinkedIn or presentations.
+
 ## Tools Used
 - Playwright
 - TypeScript
-- HTML locators
-- Built-in reporting and trace viewer
+- Node.js / NPM
+- Playwright Test Runner
+- VS Code
+- GitHub
 
-## Test Scenarios
-- Navigation bar clicks
-- Form validation (positive/negative)
-- Button click actions (Quote/Demo)
-- UI component visibility
-- Chat widget interaction
+## Author
+Frenchel Karylle B. Laroza
+BS Information Technology Graduate - University of Santo Tomas - Manila
+- LinkedIn: www.linkedin.com/in/frenchel-karylle-laroza-264307312
+- GitHub: https://github.com/frenchel
 
 ##  Run Tests
 ```bash
+# run all tests
 npx playwright test
+
+# open HTML report
 npx playwright show-report
+
+# run tests for specific concerns
+npm run test:nav      # UI navigation tests only
+npm run test:common   # Common form validations across product pages
+npm run test:chat     # Chat widget iframe automation
+

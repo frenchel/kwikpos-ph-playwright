@@ -4,33 +4,24 @@ This project is a web test automation suite for KwikPOS PH (https://www.kwikpos.
 
 ## Project Features
 
-#### Automated Form Validation
-- Validates form fields across pages like
+#### Automated Form Validation + Reusable Test Functions
+- Validates form fields across pages
 - Includes positive and negative testing
-
-#### Reusable Test Functions
-- Modular helpers in `utils/form-helper.ts`:
-  - `fillForm()` – simulate valid user input
-  - `validateForm()` – simulate validation errors
-- Enables DRY (Don't Repeat Yourself) coding across test cases.
+- Modular helpers in `utils/form-helper.ts`
+- Enables DRY (Don't Repeat Yourself) coding across test cases
 
 #### Chat Widget Automation
 - Handles **Tawk.to** chat widget within nested iframes.
-- Automates:
-  - New conversation trigger
-  - Filling required fields (Name, Email, Phone, Company)
-  - Submission validation
-- Verifies if field validations trigger on incorrect input.
+- Automates new conversation trigger, filling required fields, and submission validation
 
 #### Custom Reporter
 - Custom terminal reporter logs:
   - Success cases
   - Failures with detailed context (e.g., missing field validation)
-- Located in `reporters/custom-reporter.ts`.
+- Located in `reporters/custom-reporter.ts`
 
 #### UI Navigation Tests
-- Verifies correct routing for: Header links, Navbar dropdowns, Footer links, etc
-- Uses consistent `page.locator()` strategies with assertions.
+- Verifies correct routing for: Header links, Navbar dropdowns, Footer links, etc.
 
 ## Tools Used
 - Playwright
@@ -42,7 +33,7 @@ This project is a web test automation suite for KwikPOS PH (https://www.kwikpos.
 
 ## Author
 Frenchel Karylle B. Laroza
-BS Information Technology Graduate - University of Santo Tomas - Manila
+- BS Information Technology Graduate - University of Santo Tomas - Manila
 - LinkedIn: www.linkedin.com/in/frenchel-karylle-laroza-264307312
 - GitHub: https://github.com/frenchel
 

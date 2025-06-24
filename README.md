@@ -1,7 +1,7 @@
 # KwikPOS PH – Web Test Automation with Playwright
 This project is a web test automation suite for KwikPOS PH (https://www.kwikpos.ph), built using Playwright. Short demo below:
 
-![Automation Demo](https://github.com/frenchel/kwikpos-ph-playwright/blob/main/assets/kwikposph-playwright-demo-2.gif?raw=true) 
+![Automation Demo](https://github.com/frenchel/kwikpos-ph-playwright/blob/main/assets/kwikposph-playwright-demo-3.gif?raw=true) 
 
 ## Project Features
 

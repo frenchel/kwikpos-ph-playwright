@@ -1,7 +1,7 @@
 # KwikPOS PH – Web Test Automation with Playwright
 This project is a web test automation suite for KwikPOS PH (https://www.kwikpos.ph), built using Playwright. Short demo below:
 
-![Automation Demo](https://github.com/frenchel/kwikpos-ph-playwright/blob/main/assets/kwikposph-playwright-demo.gif?raw=true) 
+![Automation Demo](https://github.com/frenchel/kwikpos-ph-playwright/blob/main/assets/kwikposph-playwright-demo-2.gif?raw=true) 
 
 ## Project Features
 
@@ -28,6 +28,9 @@ This project is a web test automation suite for KwikPOS PH (https://www.kwikpos.
 - Custom `playwright.config.ts` file for tailored test runs and project structure
 - Tests are organized by feature (navigation, form, chat, etc.)
 - Used tools:  Playwright, TypeScript, Node.js / NPM, VS Code, GitHub
+
+## Disclaimer
+After interning at OneClickTech, where I performed manual QA testing for the KwikPOS PH website (developed by the company), I created this personal test automation project to further enhance my QA skills. While I worked on the website as a manual QA intern, this automation project was developed independently for learning and portfolio purposes. It is not officially affiliated with OneClickTech or KwikPOS PH.
 
 ## Author
 Frenchel Karylle B. Laroza
